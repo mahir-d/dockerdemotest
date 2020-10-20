@@ -4,3 +4,12 @@ services:
 script:
     - docker build -t mahirdh/node .
     - docker images mahirdh/node
+
+before_deploy:
+    -docker login -u mahirdh -p Iphone5ios6
+
+deploy:
+    provider: script
+    script: docker push mahirdh/node
+    on: 
+      branch main

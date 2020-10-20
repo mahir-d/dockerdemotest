@@ -1,0 +1,6 @@
+sudo: required
+services:
+    -docker
+script:
+    - docker build -t mahirdh/node .
+    - docker images mahirdh/node
